@@ -1,8 +1,27 @@
 import streamlit as st
 import pandas as pd
+import os
 from tracker import send_mail_and_record, get_all_events
+from dotenv import load_dotenv
+
+load_dotenv()
+APP_PASSWORD = os.getenv("ADMIN_PASSWORD")
 
 st.set_page_config(page_title="NextSteps USMLE Email Marketing", layout="wide")
+
+if "authenticated" not in st.session_state:
+    st.session_state["authenticated"] = False
+
+if not st.session_state["authenticated"]:
+    st.title("Login")
+    password = st.text_input("Enter password", type="password")
+    if st.button("Login"):
+        if password == APP_PASSWORD:
+            st.session_state["authenticated"] = True
+        else:
+            st.error("Incorrect password")
+    st.stop()
+
 st.title("NextSteps USMLE Email Marketing Platform")
 
 page = st.sidebar.selectbox("Navigation", ["Send Emails", "Deliverability Dashboard"])

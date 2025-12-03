@@ -62,6 +62,7 @@ A FastAPI application that acts as an endpoint for AWS SNS notifications linked 
    ```env
    AWS_ACCESS_KEY=your_access_key
    AWS_SECRET_KEY=your_secret_key
+   ADMIN_PASSWORD=your_admin_password
    ```
 
 ## Usage
