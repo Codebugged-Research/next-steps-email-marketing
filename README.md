@@ -5,6 +5,7 @@ This project is a comprehensive email marketing solution designed to send campai
 ## Features
 
 - **Email Campaign Management**: Send bulk emails via AWS SES with support for HTML bodies.
+- **📎 File Attachments**: Attach images, videos, and documents (PDF, DOCX, etc.) to your emails.Max limit 5mb
 - **Real-time Analytics**: Track delivery rates, open rates, click rates, bounces (permanent and transient), and complaints.
 - **Interactive Dashboard**: Visualize email performance metrics through a Streamlit interface.
 - **Automated Event Handling**: Process SES notifications (deliveries, bounces, complaints) via a FastAPI webhook.
